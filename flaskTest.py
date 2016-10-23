@@ -3,10 +3,12 @@ import markdown
 from flask import Flask
 from flask import render_template
 from flask import Markup
-from flask_flatpages import FlatPages, pygments_style_defs
+
+#wTODO: why dependecie fail?
+#from flask_flatpages import FlatPages, pygments_style_defs
 
 app = Flask(__name__)
-flatpages = FlatPages(app) # set to get those extra files
+#flatpages = FlatPages(app) # set to get those extra files
 
 @app.route('/')
 @app.route('/index')
@@ -38,9 +40,9 @@ def markDownDemo():
     #i am mrkdown
     """
 
-    path =  '{}/{}'.format('/content', "longlive.md")
+    #path =  '{}/{}'.format('/content', "longlive.md")
 
-    flatpages.get_or_404(path)
+    #flatpages.get_or_404(path)
 
     content = Markup(markdown.markdown(content))
 
