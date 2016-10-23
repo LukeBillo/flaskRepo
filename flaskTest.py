@@ -1,5 +1,8 @@
+# We import the markdown library
+import markdown
 from flask import Flask
 from flask import render_template
+from flask import Markup
 
 app = Flask(__name__)
 
@@ -22,7 +25,15 @@ def work():
 def contact():
         return render_template("contact.html")
 
-        
+#just playing with markdown posts
+def markDownDemo():
+    content = """
+    testDemo
+    #i am mrkdown
+    """
+
+    content = Markup(markdown.markdown(content))
+    return  render_template('')
 
 if __name__ == "__main__":
     app.run()
