@@ -26,6 +26,7 @@ def contact():
         return render_template("contact.html")
 
 #just playing with markdown posts
+@app.route('/mark')
 def markDownDemo():
     content = """
     testDemo
@@ -33,7 +34,7 @@ def markDownDemo():
     """
 
     content = Markup(markdown.markdown(content))
-    return  render_template('')
+    return  render_template('markdown.html', **locals())
 
 if __name__ == "__main__":
     app.run()
